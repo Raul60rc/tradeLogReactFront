@@ -1,0 +1,24 @@
+.navbarbox{
+    height: 20vh;
+    width: 100vw;
+    background-color: rgb(83, 1, 83);
+    font-weight: bolder;
+    font-family: sans-serif;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+
+}
+.navbar{
+    display: flex;
+    justify-content: center;
+    color:yellow;
+    align-items: flex-start;
+
+}
