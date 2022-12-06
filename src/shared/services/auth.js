@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 
+// need to connect this to the backend of node with a fetch
 const users =[
     {email:"contact@wallstballer.com",password:"mondongo",name:"WallStBaller"}
 ];

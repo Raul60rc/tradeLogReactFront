@@ -12,7 +12,11 @@ const LoginForm = () => {
   // Create first register & login - later Api.js will be passed to get fetch, axios to make petitions to the backend.
   // Example : API.post("users/create/", formData) -> devuelve una respuesta, la cual, podemos añadir al contexto y tenerla en toda nuestra aplicación
   //const[user, setuser] = useState() // user collects value / setUser gives value.
-  const { register, handleSubmit } = useForm();
+  const [user,setUser] = useState(null);
+  const authenticated = user != null;
+
+  const login =({email, password}) => setUser (signIn({email,password}));
+  const logout = () => setUser(null);
 
   const onSubmit = (data) => { // Submit must do fetch send email & password / remove name /
     console.log(data);
