@@ -49,6 +49,11 @@ const Navbar = () => {
           Login
         </NavLink>
       </li>
+      <li className ="profile">
+        <NavLink to="/profile" activeclassname={"active"}>
+          Profile
+        </NavLink>
+      </li>
       </ul>
         </nav>
     </header>

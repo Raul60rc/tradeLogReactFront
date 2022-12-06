@@ -2,6 +2,9 @@ import { ErrorResponse } from "@remix-run/router";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
+// Rename this file name & folder the loginForm name is incorrect check on this ASAP!! 
+// Build the Auth , login, logout to make this functional later focus on the calculator. 
+
 const LoginForm = () => {
   // all states go in here before return
   // check notion context on useState & useEffect
@@ -11,17 +14,12 @@ const LoginForm = () => {
   //const[user, setuser] = useState() // user collects value / setUser gives value.
   const { register, handleSubmit } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = (data) => { // Submit must do fetch send email & password / remove name /
     console.log(data);
   }
  // ask about error & errors.
   return (
     <form class="form-box" onSubmit={handleSubmit(onSubmit)}>
-      <label>
-        Name
-        <input type="text" {...register("name", { required: true })} />
-        {/* {errors.name?.type === "required" && "Name is required"} */}
-      </label>
       <label>
         Email
         <input

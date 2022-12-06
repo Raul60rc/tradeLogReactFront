@@ -7,13 +7,16 @@ import LoginForm from "./components/Login/LoginForm";
 import Home from "./components/Home/Home";
 import TradeLogger from "./components/TradeLogger/TradeLogger";
 import NotFound from "./components/NotFound/NotFound";
-import Pricing from "./components/Pricing/Pricing"
+import Pricing from "./components/Pricing/Pricing";
+import Profile from "./components/Profile/Profile";
+
 
 
 function App(){
     return(
         <div className="App">
                 <header>
+
                 <Navbar/>
                 </header>
                 <main>
@@ -24,9 +27,14 @@ function App(){
                 <Route path = "/tradeLogger" element={<TradeLogger/>}/>
                 <Route path = "/notFound" element={<NotFound/>}/>
                 <Route path = "/login" element={<LoginForm/>}/>
+                <Route path = "/profile" element={<Profile/>}/>
+
 
                     </Routes>
                 </main>
+                <footer>
+                    
+                </footer>
         </div>
     )
 }
