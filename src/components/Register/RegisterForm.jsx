@@ -1,50 +1,56 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import "./LoginForm.scss";
+import "./RegisterForm.scss";
 
-const LoginForm = () => {
+const RegisterForm = () => {
   const navigate = useNavigate();
-
+// using States here to save data & to control data / can save till the session on if routes changed the state is changed. 
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = () => {
-    if (email === "" || password === "") {
+    if (name === "" || email === "" || password === "") {
       alert("Please fill in all fields");
       return;
     }
 
-    fetch("http://localhost:8080/users/login", { // fetches to the backend to get the data 
-      method: "POST",
+    fetch('http://localhost:8080/users/create', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
+        name,
         email,
         password,
       }),
     })
       .then((response) => response.json())
       .then((response) => {
-        if (!response?.token) {
-          alert("Ups, something is incorrect");
-          return;
+        if (!response?.email) {
+          alert("Ups, something went wrong");
         }
 
-        localStorage.setItem("token", response.token);
-        localStorage.setItem("user", JSON.stringify(response.userDB));
-
-        navigate("/");
+        navigate("/login");
       })
       .catch(() => {
-        alert("Error logging in please try again");
+        alert("Error while creating user");
       });
   };
 
   return (
     <div className="form">
-      <h1>Login</h1>
+      <h1>Create account</h1>
+      <input
+        type="text"
+        placeholder="Name"
+        value={name}
+        onChange={(event) => {
+          setName(event.target.value);
+        }}
+      />
       <input
         type="email"
         placeholder="Email"
@@ -62,11 +68,10 @@ const LoginForm = () => {
         }}
       />
       <button type="button" onClick={() => handleSubmit()}>
-        Login
+        Create account
       </button>
     </div>
   );
 };
 
-export default LoginForm;
-
+export default RegisterForm;

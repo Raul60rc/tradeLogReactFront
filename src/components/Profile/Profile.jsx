@@ -1,18 +1,21 @@
-import React from 'react'
+import React, { useEffect } from "react";
 
-function Profile({user}) {
-  const {email,password,name} = user  || {};
-  return(
+function Profile() {
+  const [user, setUser] = React.useState({});
+
+  useEffect(() => {
+    localStorage.getItem("user") && setUser(JSON.parse(localStorage.getItem("user")));
+  }, []);
+
+  return (
     <>
-    <h1>Profile</h1>
-    <dt>Email</dt>
-    <dd>{email}</dd>
-    <dt>Password</dt>
-    <dd>{password}</dd>
-    <dt>Name</dt>
-    <dd>{name}</dd>
+      <h1>Profile</h1>
+      <dt>Email</dt>
+      <dd>{user.email}</dd>
+      <dt>Name</dt>
+      <dd>{user.name}</dd>
     </>
-  )
+  );
 }
 
 export default Profile;

@@ -1,4 +1,4 @@
-.tradeLoggerContainer {
+.usersContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,7 +15,7 @@
     margin-bottom: 20px;
   }
 
-  .tradeLoggerButtons {
+  .usersButtons {
     width: 100%;
     display: flex;
     align-items: center;
@@ -38,48 +38,13 @@
     }
   }
 
-  .tradeLoggerStats {
-    width: 100%;
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-
-    .tradeLoggerStatsItem {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      background-color: blueviolet;
-      color: white;
-      padding: 20px;
-      border-radius: 5px;
-
-      p {
-        margin: 0;
-        font-weight: bold;
-      }
-    }
-
-    @media (min-width: 768px) {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    @media (min-width: 1024px) {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    @media (min-width: 1280px) {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-  }
-
-  .tradeLoggerList {
+  .usersList {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
     grid-gap: 20px;
 
-    .tradeLoggerItem {
+    .usersUser {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -97,7 +62,7 @@
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
       }
 
-      .traderLoggerItem-info {
+      .usersUser-info {
         display: flex;
         flex-direction: column;
         gap: 0.25rem;
@@ -168,7 +133,7 @@
     }
   }
 
-  .tradeLoggerEmpty {
+  .usersEmpty {
     color: red;
   }
 }

@@ -3,7 +3,7 @@ import './Pricing.scss'
 
 const Pricing = () => {
   return (
-    <div>
+    <div className='contentpricing'>
       <div className='pricing-box'>
         <h2>Monthly Plan</h2>
         <p>Price €9.99</p>
